@@ -96,17 +96,13 @@ console.log(check3and7(9));
 */
 
 function reverseString(a){
-    for(let i = 0; i < a.length; i++){
-        aIndex = a[i];
-
+    let newArray = [];
+    for(let i = a.length-1; i <= 0; i--){
+        newArray = newArray.push(a[i]);
     }
-
+    return newArray;
 }
-
-reverseString("EPICODE")
-
-let a = "epicode"
-
+console.log(reverseString("EPICODE"));
 
 
 /* ESERCIZIO 8
@@ -147,4 +143,4 @@ cutString("non ci siamo")
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(){}
