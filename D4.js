@@ -117,7 +117,7 @@ function upperFirst(str){
     let nowStr = [];
     for(let i = 0; i < word.length; i++){
         let firstChar = word[i].charAt(0).toUpperCase(); 
-        let lastLetters = word[i].slice(1) 
+        let lastLetters = word[i].slice(1);
         upperWord = firstChar + lastLetters;
         // nowStr += upperWord + " ";
         nowStr.push(upperWord);
