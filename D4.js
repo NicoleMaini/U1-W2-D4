@@ -62,10 +62,10 @@ boundary(100)
 */
 
 function epify(abs) {
-    if(abs[0] === "Epicode") {
+    if(abs[0] === "EPICODE") {
         console.log(abs);
     } else {
-        console.log("Epicode", abs);
+        console.log("EPICODE", abs);
     }
 }
 
@@ -96,11 +96,12 @@ console.log(check3and7(9));
 */
 
 function reverseString(a){
-    let newArray = [];
-    for(let i = a.length-1; i <= 0; i--){
-        newArray = newArray.push(a[i]);
-    }
-    return newArray;
+    return a.split("").reverse().join("");
+    // let newArray = [];
+    // for(let i = a.length; i <= 0; i--){
+    //     newArray.push(a[i]);
+    // }
+    // return newArray;
 }
 console.log(reverseString("EPICODE"));
 
@@ -111,19 +112,21 @@ console.log(reverseString("EPICODE"));
 */
 
 function upperFirst(str){
-    let phraseArr =  str.split(" ");
-    console.log(phraseArr);
-    for(let i = 0; i < phraseArr.length; i++){
-        let wordArr = [];
-        wordArr.push(phraseArr[i]);
-        for (let n = 0; n < wordArr.length; n++) {
-            wordArr[0] = wordArr[0].toUpperCase();
-        }
-        console.log(wordArr);
+    let word =  str.split(" ");
+    // let nowStr = "";
+    let nowStr = [];
+    for(let i = 0; i < word.length; i++){
+        let firstChar = word[i].charAt(0).toUpperCase(); 
+        let lastLetters = word[i].slice(1) 
+        upperWord = firstChar + lastLetters;
+        // nowStr += upperWord + " ";
+        nowStr.push(upperWord);
     }
+    return nowStr.join(" ")
 }
 
-upperFirst("non ci siamo")
+console.log(upperFirst("non ci siamo"));
+
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. 
@@ -131,7 +134,7 @@ upperFirst("non ci siamo")
  della stringa originale.
 */
 function cutString(a){
-    let b = a.split(" ")
+    let b = a.slice(1,-1)
     console.log(b);
 }
 
@@ -140,7 +143,18 @@ cutString("non ci siamo")
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 10
- Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
+ Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna 
+ un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-function giveMeRandom(){}
+
+function giveMeRandom(n){
+    let arrCasualNumb = [];
+    for(let i = 0; i < n; i++){
+        let casualNumb = Math.floor(Math.random() * 11);
+        arrCasualNumb.push(casualNumb);
+    }
+    return arrCasualNumb
+}
+
+console.log(giveMeRandom(5));
